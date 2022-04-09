@@ -1,0 +1,4 @@
+tensorflow-recommenders==0.6.0
+tensorflow-datasets==4.5.2
+scann==1.2.5
+pytest==6.2.3
