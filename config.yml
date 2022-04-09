@@ -1,0 +1,6 @@
+# Package Parameters
+package_name: rec_sys_model
+
+# Model Parameters
+data_version: 1m
+data_dir_path: ./src/datasets
