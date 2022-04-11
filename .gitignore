@@ -1,1 +1,4 @@
-src/datasets/*
+src/datasets/v1/*
+src/datasets/v2/*
+src/datasets/v3/*
+src/datasets/v4/*

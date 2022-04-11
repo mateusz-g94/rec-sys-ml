@@ -4,3 +4,5 @@ scann==1.2.5
 pytest==6.2.3
 pydantic==1.9.0
 strictyaml==1.6.1
+pandas-tfrecords==0.1.6
+wget==3.2
