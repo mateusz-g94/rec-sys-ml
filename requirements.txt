@@ -6,3 +6,4 @@ pydantic==1.9.0
 strictyaml==1.6.1
 pandas-tfrecords==0.1.6
 wget==3.2
+pandas==1.4.2

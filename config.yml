@@ -3,4 +3,4 @@ package_name: rec_sys_model
 
 # Model Parameters
 data_version: 20m
-data_dir_path: ./src/datasets/v1
+data_dir_path: ./src/datasets

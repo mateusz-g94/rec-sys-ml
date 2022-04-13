@@ -1,14 +1,1 @@
-todo 1. split_data.py
-    - test last sample
-    - valid random 20%
-
-todo 2. join_data.py
-    - movie title to ratings
-
-todo 3. select columns.py
-    - select only usefull columns
-
-todo 4. tox testenv: test_data_pipeline
-    - test each data layer
-
 todo 5. find current notebooks and start coding models

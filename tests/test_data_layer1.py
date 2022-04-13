@@ -1,9 +1,9 @@
-import tensorflow_datasets as tfds
 from src.config.config import config
 import pandas as pd
 
+
 def test_data_layer1():
-    ratings = pd.read_csv(config.model_config.data_dir_path+'/ratings.csv')
+    ratings = pd.read_csv(config.model_config.data_dir_path+'/v1/ratings.csv')
     if config.model_config.data_version == '1m':
         assert len(ratings) >= 1000000
     elif config.model_config.data_version == '20m':
