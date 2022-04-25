@@ -7,3 +7,5 @@ strictyaml==1.6.1
 pandas-tfrecords==0.1.6
 wget==3.2
 pandas==1.4.2
+numpy==1.22.3
+tensorflow==2.8.0

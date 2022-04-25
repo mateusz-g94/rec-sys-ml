@@ -1,6 +1,15 @@
 # Package Parameters
 package_name: rec_sys_model
 
+# Preprocessing Parameters
+user_freq: 0.05
+validation_freq: 0.25
+
 # Model Parameters
 data_version: 20m
 data_dir_path: ./src/datasets
+model_dir_path: ./db
+model_params:
+  ret:
+    epochs: 10
+

@@ -1,1 +1,13 @@
-todo 5. find current notebooks and start coding models
+
+todo 6. implement retrieval model
+    - przeliczyc model runem
+    - wyciagnac parametry do config
+    - wyciagnac artefakty
+    - zapisac model do model registry
+    - uporzadkowac kod
+    - zapiac w tox
+    - dopisac testy
+todo 7. serialize retrieval model
+todo 8. store artefacts
+todo 9. poczytac dokumentacje
+        np. StringLookup przyjmuje jako vocabulary stringi

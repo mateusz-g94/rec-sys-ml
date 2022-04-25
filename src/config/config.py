@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Dict, List, Sequence
+from typing import Dict, List, Sequence, Union, NamedTuple
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
@@ -19,6 +19,15 @@ class AppConfig(BaseModel):
     package_name: str
 
 
+class PreprocessingConfig(BaseModel):
+    """
+    All configuration relevant to model preprocessing.
+    """
+
+    user_freq: float
+    validation_freq: float
+
+
 class ModelConfig(BaseModel):
     """
     All configuration relevant to model
@@ -27,6 +36,8 @@ class ModelConfig(BaseModel):
 
     data_dir_path: str
     data_version: str
+    model_dir_path: str
+    model_params: Dict[str, Dict[str, Union[int]]]
 
 
 class Config(BaseModel):
@@ -34,6 +45,7 @@ class Config(BaseModel):
 
     app_config: AppConfig
     model_config: ModelConfig
+    preprocessing_config: PreprocessingConfig
 
 
 def find_config_file() -> Path:
@@ -64,6 +76,7 @@ def create_and_validate_config(parsed_config: YAML = None) -> Config:
     # specify the data attribute from the strictyaml YAML type.
     _config = Config(
         app_config=AppConfig(**parsed_config.data),
+        preprocessing_config=PreprocessingConfig(**parsed_config.data),
         model_config=ModelConfig(**parsed_config.data),
     )
 
