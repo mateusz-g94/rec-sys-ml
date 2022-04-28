@@ -9,7 +9,13 @@ validation_freq: 0.25
 data_version: 20m
 data_dir_path: ./src/datasets
 model_dir_path: ./db
+results_dir_path: ./results
 model_params:
   ret:
+    epochs: 10
+    scann_k: 15
+    layer1: 16
+    layer2: 8
+  ran:
     epochs: 10
 

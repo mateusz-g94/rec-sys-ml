@@ -1,13 +1,19 @@
-
-todo 6. implement retrieval model
-    - przeliczyc model runem
-    - wyciagnac parametry do config
-    - wyciagnac artefakty
-    - zapisac model do model registry
-    - uporzadkowac kod
-    - zapiac w tox
-    - dopisac testy
-todo 7. serialize retrieval model
-todo 8. store artefacts
-todo 9. poczytac dokumentacje
+todo 0. podmienic valid w retrievalu bo jest test
+todo 1. ranking model
+    - wyciagnac parametry modeli zahardkodowane
+todo 2. inference model
+    - napisac dekorator time
+todo 3. results interface
+todo 4. evaluacja na zbiorze testowym
+todo 5. poczytac dokumentacje
         np. StringLookup przyjmuje jako vocabulary stringi
+todo 6. dopisac testy
+todo 7. zrozumiec siec
+todo 8. narysowac graf sieci
+todo 9. napisac dokumentacje
+todo 10. zrobic pakiet pythona
+todo 11. zainstalowac lokalnie pakiet py
+todo 12. przetestowawac lokalnie pakiet py
+todo 13. zrobic lokalny CI/CD
+todo 14. poukladac config
+todo 15. moze odpalic GPU?

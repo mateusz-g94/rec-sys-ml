@@ -37,7 +37,8 @@ class ModelConfig(BaseModel):
     data_dir_path: str
     data_version: str
     model_dir_path: str
-    model_params: Dict[str, Dict[str, Union[int]]]
+    results_dir_path: str
+    model_params: Dict[str, Dict[str, Union[int, List[int]]]]
 
 
 class Config(BaseModel):

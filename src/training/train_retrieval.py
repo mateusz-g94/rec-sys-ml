@@ -1,5 +1,6 @@
 from src.model.retrieval import MovielensModel
 import numpy as np
+import json
 import tensorflow_recommenders as tfrs
 from collections import OrderedDict
 import tensorflow as tf
@@ -38,13 +39,16 @@ if __name__ == '__main__':
     ratings_test_cached = ratings_test.batch(4096).cache()
 
     # Train
-    model = MovielensModel([16,8], movies.map(lambda x: x['movie_title']), unique_user_ids, unique_movie_titles)
+    model = MovielensModel([config.model_config.model_params['ret']['layer1'], config.model_config.model_params['ret']['layer2']],
+                           movies.map(lambda x: x['movie_title']),
+                           unique_user_ids,
+                           unique_movie_titles)
     model.compile(optimizer=tf.keras.optimizers.Adam())
 
     two_layer_history = model.fit(
         ratings_train_cached,
         validation_data=ratings_test_cached,
-        validation_freq=5,
+        validation_freq=1,
         epochs=config.model_config.model_params['ret']['epochs'],
         verbose=1)
 
@@ -57,8 +61,13 @@ if __name__ == '__main__':
         'loss']
     results['val_loss'] = two_layer_history.history[
         'val_loss']
+    results['epochs'] = config.model_config.model_params['ret']['epochs']
+    results['arch'] = [config.model_config.model_params['ret']['layer1'], config.model_config.model_params['ret']['layer2']]
+    results['scann_k'] = config.model_config.model_params['ret']['scann_k']
+    with open(f'{config.model_config.results_dir_path}/results_retrieval.json', 'w') as f:
+        json.dump(results, f)
 
-    scann_index = tfrs.layers.factorized_top_k.ScaNN(model.query_model, k = 15)
+    scann_index = tfrs.layers.factorized_top_k.ScaNN(model.query_model, k = config.model_config.model_params['ret']['scann_k'])
     scann_index.index_from_dataset(
       tf.data.Dataset.zip((movies.map(lambda x: x["movie_title"]).batch(100), movies.map(lambda x: x["movie_title"]).batch(100).map(model.candidate_model)))
     )
@@ -67,5 +76,4 @@ if __name__ == '__main__':
 
     tf.saved_model.save(
           scann_index,
-          f'{config.model_config.model_dir_path}/model_ret_pkl',
-          options=tf.saved_model.SaveOptions(namespace_whitelist=["Scann"]))
+          f'{config.model_config.model_dir_path}/model_ret_pkl')
