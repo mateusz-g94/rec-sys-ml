@@ -1,5 +1,6 @@
 import tensorflow as tf
 import tensorflow_recommenders as tfrs
+from src.config.config import config
 
 
 class UserModel(tf.keras.Model):
@@ -10,7 +11,7 @@ class UserModel(tf.keras.Model):
         self.user_embedding = tf.keras.Sequential([
             tf.keras.layers.StringLookup(
                 vocabulary = unique_user_ids, mask_token=None),
-            tf.keras.layers.Embedding(len(unique_user_ids) + 1, 32),
+            tf.keras.layers.Embedding(len(unique_user_ids) + 1, config.model_config.model_params['ret']['user_embedding_dim']),
         ])
 
     def call(self, inputs):
@@ -61,7 +62,7 @@ class MovieModel(tf.keras.Model):
         self.title_embedding = tf.keras.Sequential([
             tf.keras.layers.StringLookup(
                 vocabulary = unique_movie_titles,mask_token=None),
-                tf.keras.layers.Embedding(len(unique_movie_titles) + 1, 25)
+                tf.keras.layers.Embedding(len(unique_movie_titles) + 1, config.model_config.model_params['ret']['title_embedding_dim'])
                 ])
 
         self.title_vectorizer = tf.keras.layers.TextVectorization(
@@ -69,7 +70,7 @@ class MovieModel(tf.keras.Model):
 
         self.title_text_embedding = tf.keras.Sequential([
             self.title_vectorizer,
-            tf.keras.layers.Embedding(max_tokens, 7, mask_zero=True),
+            tf.keras.layers.Embedding(max_tokens, config.model_config.model_params['ret']['title_text_embedding_dim'], mask_zero=True),
             tf.keras.layers.GlobalAveragePooling1D(),
             ])
 

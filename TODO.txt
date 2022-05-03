@@ -1,9 +1,6 @@
-todo 0. podmienic valid w retrievalu bo jest test
-todo 1. ranking model
-    - wyciagnac parametry modeli zahardkodowane
-todo 2. inference model
-    - napisac dekorator time
-todo 3. results interface
+
+todo 2. zwrocic artefakty uczenia/bledy, wyrysowac te artefakty
+plt subpplots loss i metryka
 todo 4. evaluacja na zbiorze testowym
 todo 5. poczytac dokumentacje
         np. StringLookup przyjmuje jako vocabulary stringi

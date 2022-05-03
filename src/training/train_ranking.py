@@ -35,7 +35,11 @@ if __name__ == '__main__':
     ratings_valid_cached = ratings_valid.batch(4096).cache()
 
     # Train
-    model = MovielensModel(unique_user_ids, unique_movie_titles)
+    model = MovielensModel(
+                    layer_sizes = [config.model_config.model_params['ran']['layer1'], config.model_config.model_params['ran']['layer2']],
+                    unique_user_ids = unique_user_ids,
+                    unique_movie_titles = unique_movie_titles)
+
     model.compile(optimizer=tf.keras.optimizers.Adagrad(learning_rate=0.1))
 
     history = model.fit(
@@ -45,6 +49,7 @@ if __name__ == '__main__':
         epochs=config.model_config.model_params['ran']['epochs'],
         verbose=1)
 
+    # Results
     results = {}
     results['root_mean_squared_error'] = history.history['root_mean_squared_error']
     results['val_root_mean_squared_error'] = history.history['val_root_mean_squared_error']
@@ -55,4 +60,5 @@ if __name__ == '__main__':
     with open(f'{config.model_config.results_dir_path}/results_ranking.json', 'w') as f:
         json.dump(results, f)
 
+    # Save model
     tf.saved_model.save(model, f'{config.model_config.model_dir_path}/model_ran_pkl')
