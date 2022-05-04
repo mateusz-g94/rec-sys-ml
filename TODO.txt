@@ -1,10 +1,5 @@
-
-todo 2. zwrocic artefakty uczenia/bledy, wyrysowac te artefakty
-plt subpplots loss i metryka
-todo 4. evaluacja na zbiorze testowym
 todo 5. poczytac dokumentacje
         np. StringLookup przyjmuje jako vocabulary stringi
-todo 6. dopisac testy
 todo 7. zrozumiec siec
 todo 8. narysowac graf sieci
 todo 9. napisac dokumentacje
