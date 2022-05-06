@@ -3,3 +3,4 @@ src/datasets/v2/*
 src/datasets/v3/*
 src/datasets/v4/*
 src/datasets/v5/*
+.tox

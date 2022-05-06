@@ -6,7 +6,7 @@ from strictyaml import YAML, load
 # Project Directories
 FILE_ROOT = Path(__file__).resolve().parent
 ROOT = FILE_ROOT.parent
-CONFIG_FILE_PATH = ROOT.parent / "config.yml"
+CONFIG_FILE_PATH = ROOT / "config.yml"
 DATASET_DIR = ROOT / "datasets"
 TRAINED_MODEL_DIR = ROOT / "db"
 

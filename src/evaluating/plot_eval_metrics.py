@@ -23,7 +23,7 @@ def plot_metric(js, model):
     ax[1].set_title('loss')
 
     plt.legend()
-    plt.show()
+    plt.savefig(f'./results/{model}.jpg')
 
 
 def eval_metrics(model):
@@ -42,3 +42,4 @@ def eval_metrics(model):
 if __name__ == '__main__':
 
     eval_metrics('ran')
+    eval_metrics('ret')
