@@ -1,11 +1,8 @@
-todo 5. poczytac dokumentacje
-        np. StringLookup przyjmuje jako vocabulary stringi
-todo 7. zrozumiec siec
-todo 8. narysowac graf sieci
-todo 9. napisac dokumentacje
-todo 10. zrobic pakiet pythona
-todo 11. zainstalowac lokalnie pakiet py
-todo 12. przetestowawac lokalnie pakiet py
-todo 13. zrobic lokalny CI/CD
-todo 14. poukladac config
-todo 15. moze odpalic GPU?
+todo poprawki tox
+todo setup py
+todo pip install localy
+todo make file
+todo readme.md update
+todo wyklikanie w konsoli aws dpeloyment
+todo automatyzacja z codebuild
+todo CI/CD

@@ -7,3 +7,4 @@ include src/VERSION
 include src/config.yml
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
+recursive-exclude ./src/datasets/*
