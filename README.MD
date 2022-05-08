@@ -10,8 +10,9 @@ Table of Contents
 1. Overview
 2. Data
 3. Model architecture
-4. Model evaluation
-5. Package building locally
+4. Model training and locally package building
+5. Model evaluation
+   1. Iteration I
 6. Package building AWS CodeArtefacts
 7. CI/CD
 
@@ -50,7 +51,64 @@ Model consists of two stages:
   
 [![](https://mermaid.ink/img/pako:eNpV0D0PgjAQBuC_0tykCZK4Mpj4OemCI2W40BMaaUtKS6LAf7coJtrp8t7TvE17KIwgSKC02FTsnHLNwtlmF9NJYoWxjW9ztlptBiVraXQ7sN0iJWcldVizq8OSlp9Lu4mxofJaWBIB7hcp6rvU5R_bv9lhbljnv-kxi-P4NxmEedJUepq9fm8hAkVWoRTh6f2UcHAVKeKQhFGgvXPgegzONwIdHYV0xkJyw7qlCNA7c33oAhJnPX3RQWL4BjWr8QWBvVqg)](https://mermaid.live/edit#pako:eNpV0D0PgjAQBuC_0tykCZK4Mpj4OemCI2W40BMaaUtKS6LAf7coJtrp8t7TvE17KIwgSKC02FTsnHLNwtlmF9NJYoWxjW9ztlptBiVraXQ7sN0iJWcldVizq8OSlp9Lu4mxofJaWBIB7hcp6rvU5R_bv9lhbljnv-kxi-P4NxmEedJUepq9fm8hAkVWoRTh6f2UcHAVKeKQhFGgvXPgegzONwIdHYV0xkJyw7qlCNA7c33oAhJnPX3RQWL4BjWr8QWBvVqg)
 
-### 4. Model evaluation
+### 4. Model training and package building locally
+
+Check config.yml file specification and make sure the training parameters are set properly.
+
+Download data, prepare data, train both models and test:
+```commandline
+tox
+```
+
+Train one model:
+```commandline
+tox -e train_retrieval 
+tox -e train_ranking
+```
+
+Build package locally:
+```commandline
+python3 -m pip install --upgrade build
+python3 -m build
+```
+
+Install package to local pypi repository:
+```commandline
+pip install ./dist/recsysmodel-0.0.1-py3-none-any.whl
+```
+
+Check package:
+```python
+from recsysmodel.scoring.predict import predict
+user_id = 20
+# Recomendations for user 20
+rec = predict(20)
+print(rec)
+
+Results:
+[b'Wallace & Gromit: A Close Shave (1995)', b'Gattaca (1997)', b'Thing, The (1982)', b'Cube (1997)', b'Black Orchid, The (1958)'], [4.351129531860352, 4.121507167816162, 4.089163303375244, 3.755620241165161, 3.7031068801879883])
+```
+
+### 5. Model evaluation
+
+* <b>Iteration I</b> <br>
+Assumptions:
+  * 5% of observations
+  * retrieval ::
+    epochs: 10
+    user_embedding_dim: 32
+    title_embedding_dim: 25
+    title_text_embedding_dim: 7
+    layer1: 16
+    layer2: 8
+    scann_k: 15
+
+  * ranking ::
+    epochs: 10
+    user_embedding_dim: 32
+    movie_embedding_dim: 32
+    layer1: 32
+    layer2: 16
 
 Retrieval model
 

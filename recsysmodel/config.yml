@@ -1,0 +1,29 @@
+# Package Parameters
+package_name: rec_sys_model
+
+# Preprocessing Parameters
+user_freq: 0.05
+validation_freq: 0.25
+
+# Model Parameters
+data_version: 20m
+data_dir_path: ./recsysmodel/datasets
+model_dir_path: ./recsysmodel/db
+results_dir_path: ./results
+model_params:
+  ret:
+    epochs: 10
+    user_embedding_dim: 32
+    title_embedding_dim: 25
+    title_text_embedding_dim: 7
+    layer1: 16
+    layer2: 8
+    scann_k: 15
+
+  ran:
+    epochs: 10
+    user_embedding_dim: 32
+    movie_embedding_dim: 32
+    layer1: 32
+    layer2: 16
+

@@ -1,10 +1,19 @@
 include *.txt
 include *.md
 include *.pkl
+include *.json
 recursive-include ./src/*
-recursive-include ./src/db/*
-include src/VERSION
-include src/config.yml
+recursive-exclude ./src/training *
+
+recursive-include ./src/db *
+include ./src/VERSION
+include ./src/config.yml
+include ./results/results_ranking.json
+include ./results/results_retrieval.json
+
+include ./requirements.txt
+exclude *.log
+exclude *.cfg
+
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
-recursive-exclude ./src/datasets/*

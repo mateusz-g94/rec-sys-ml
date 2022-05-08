@@ -7,4 +7,14 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyNamespacePackagesService">
+    <option name="namespacePackageFolders">
+      <list>
+        <option value="$MODULE_DIR$/recsysmodel/model" />
+        <option value="$MODULE_DIR$/recsysmodel/evaluating" />
+        <option value="$MODULE_DIR$/recsysmodel/db" />
+        <option value="$MODULE_DIR$/recsysmodel/utils" />
+      </list>
+    </option>
+  </component>
 </module>

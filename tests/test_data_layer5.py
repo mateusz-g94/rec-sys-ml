@@ -1,7 +1,9 @@
-from src.config.config import config
+from collections import OrderedDict
+
 import pandas as pd
 import tensorflow as tf
-from collections import OrderedDict
+
+from recsysmodel.config.config import config
 
 
 def test_data_layer5():

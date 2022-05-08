@@ -1,7 +1,8 @@
-from src.config.config import config
 import pandas as pd
-import tensorflow as tf
 import scann
+import tensorflow as tf
+
+from recsysmodel.config.config import config
 
 
 def test_serving_ran():

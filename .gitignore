@@ -1,6 +1,8 @@
-src/datasets/v1/*
-src/datasets/v2/*
-src/datasets/v3/*
-src/datasets/v4/*
-src/datasets/v5/*
+recsysmodel/datasets/v1/*
+recsysmodel/datasets/v2/*
+recsysmodel/datasets/v3/*
+recsysmodel/datasets/v4/*
+recsysmodel/datasets/v5/*
 .tox
+recsysmodel.egg-info
+dist

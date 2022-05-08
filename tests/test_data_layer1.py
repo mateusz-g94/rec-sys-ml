@@ -1,5 +1,6 @@
-from src.config.config import config
 import pandas as pd
+
+from recsysmodel.config.config import config
 
 
 def test_data_layer1():
