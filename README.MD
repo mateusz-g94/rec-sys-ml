@@ -23,9 +23,9 @@ The project shows how to build a <b>modern recommendation system</b> based on th
 - Train the recommendation engine
 - Structure the project 
 - Train the model
-- Build the pypi package locally
-- Build the pypi package in AWS CodeArtefacts
-- Build CI/CD pipeline for building pypi package in the AWS 
+- Build the PyPi package locally
+- Build the PyPi package in AWS CodeArtefacts
+- Build CI/CD pipeline for building PyPi package in the AWS 
 
 This is the first of two parts. The second part of the project will be in a separate repository and will concern building a <b>Flask REST API</b> that will share predictions from the model. 
 
@@ -72,7 +72,7 @@ python3 -m pip install --upgrade build
 python3 -m build
 ```
 
-Install package to local pypi repository:
+Install package to local PyPi repository:
 ```commandline
 pip install ./dist/recsysmodel-0.0.1-py3-none-any.whl
 ```
