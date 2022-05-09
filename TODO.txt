@@ -1,9 +1,0 @@
-todo poprawki tox
-todo setup py
-todo pip install localy
-todo make file
-todo readme.md update
-todo wyklikanie w konsoli aws dpeloyment
-todo automatyzacja z codebuild
-todo CI/CD
-todo filmiki na yt
