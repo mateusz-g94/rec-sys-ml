@@ -7,3 +7,5 @@ recsysmodel/datasets/v5/*
 recsysmodel.egg-info
 dist
 TODO.txt
+notebooks/*
+notebooks
