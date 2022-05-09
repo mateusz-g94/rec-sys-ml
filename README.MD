@@ -204,4 +204,4 @@ If you've created domain and repository for educational purpose don't forget to 
 ```commandline
 aws codeartifact delete-repository --domain cloud-pypi-repo --domain-owner $AWS_ACCOUNT_ID --repository recsysmodel
 aws codeartifact delete-domain --domain cloud-pypi-repo --domain-owner $AWS_ACCOUNT_ID
-```  
+```   
